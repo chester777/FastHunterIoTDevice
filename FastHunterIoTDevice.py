@@ -160,4 +160,4 @@ os.system("sudo hciconfig " + BLE_DEVICE + " pcsan")
 os.system("sudo hciconfig " + BLE_DEVICE + " leadv")
 
 #advertising
-os.system("sudo hcitool -i " + BLE_DEVICE + " cmd " + OGF + " " + OCF + " " + BEACON_PREFIX + " " + uuid + " " + MajorData + " " + MinoData + " " + Power)
+os.system("sudo hcitool -i " + BLE_DEVICE + " cmd " + OGF + " " + OCF + " " + BEACON_PREFIX + " " + uuid + " " + MajorData + " " + MinorData + " " + Power)
