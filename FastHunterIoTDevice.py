@@ -1,6 +1,7 @@
 import os
 import sys
 import random
+import time
 
 def makeBLEPacket() :
 
@@ -162,8 +163,15 @@ def makeBLEPacket() :
 	os.system("sudo hciconfig " + BLE_DEVICE + " leadv")
 
 	#advertising
+	print "Device No:" + str(DEVICE_NO)
+	print "Major Data:" + str(MajorData)
+	print "Minor Data:" + str(MinorData)
 	os.system("sudo hcitool -i " + BLE_DEVICE + " cmd " + OGF + " " + OCF + " " + BEACON_PREFIX + " " + uuid + " " + MajorData + " " + MinorData + " " + Power)
 
 if __name__ == '__main__' :
-	while True :
-		makeBLEPacket()
+	try :
+		while True :
+			makeBLEPacket()
+			time.sleep(0.1)
+	except KeyboardInterrupt :
+		pass
